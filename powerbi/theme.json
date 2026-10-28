@@ -1,0 +1,21 @@
+{
+  "name": "Retail Navy",
+  "dataColors": [
+    "#2563EB",
+    "#16A34A",
+    "#F59E0B",
+    "#DC2626",
+    "#14213D"
+  ],
+  "background": "#F8FAFC",
+  "foreground": "#14213D",
+  "tableAccent": "#2563EB",
+  "textClasses": {
+    "label": {
+      "fontFace": "Segoe UI"
+    },
+    "title": {
+      "fontFace": "Segoe UI"
+    }
+  }
+}

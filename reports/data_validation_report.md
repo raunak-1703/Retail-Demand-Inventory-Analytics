@@ -1,0 +1,65 @@
+# Data validation report
+
+59/59 checks passed on saved CSV outputs. Source quantities and prices independently reconciled.
+
+- PASS: retail_sales: expected columns
+- PASS: retail_sales: no missing values
+- PASS: product_summary: expected columns
+- PASS: product_summary: no missing values
+- PASS: store_summary: expected columns
+- PASS: store_summary: no missing values
+- PASS: monthly_sales: expected columns
+- PASS: monthly_sales: no missing values
+- PASS: abc_analysis: expected columns
+- PASS: abc_analysis: no missing values
+- PASS: inventory_planning: expected columns
+- PASS: inventory_planning: no missing values
+- PASS: dim_date: expected columns
+- PASS: dim_date: no missing values
+- PASS: dim_store: expected columns
+- PASS: dim_store: no missing values
+- PASS: lead_time_sensitivity: expected columns
+- PASS: lead_time_sensitivity: no missing values
+- PASS: top_10_fast_moving: expected columns
+- PASS: top_10_fast_moving: no missing values
+- PASS: top_10_slow_moving: expected columns
+- PASS: top_10_slow_moving: no missing values
+- PASS: dim_product: expected columns
+- PASS: dim_product: no missing values
+- PASS: No duplicate product-store-date keys
+- PASS: Exactly 50 products, 2 stores, 365 complete days
+- PASS: Nonnegative integer sales
+- PASS: Nonnegative finite prices
+- PASS: Revenue equals quantity times price
+- PASS: Product_ID: detail reconciles to summary
+- PASS: Store_ID: detail reconciles to summary
+- PASS: Monthly totals reconcile
+- PASS: ABC contribution sums to 100%
+- PASS: ABC classes valid and complete
+- PASS: ABC threshold crossing rule
+- PASS: ABC contributions recomputed
+- PASS: Movement quartiles and daily means
+- PASS: top_10_fast_moving ranking
+- PASS: top_10_slow_moving ranking
+- PASS: inventory_planning: demand statistics
+- PASS: inventory_planning: safety stock formula
+- PASS: inventory_planning: reorder point formula
+- PASS: inventory_planning: nonnegative recommendations
+- PASS: inventory_planning: assumptions
+- PASS: lead_time_sensitivity: demand statistics
+- PASS: lead_time_sensitivity: safety stock formula
+- PASS: lead_time_sensitivity: reorder point formula
+- PASS: lead_time_sensitivity: nonnegative recommendations
+- PASS: lead_time_sensitivity: assumptions
+- PASS: Base lead time seven days
+- PASS: 5/7/10 day sensitivity monotonic
+- PASS: product_summary: product identifiers
+- PASS: abc_analysis: product identifiers
+- PASS: inventory_planning: product identifiers
+- PASS: dim_product: product identifiers
+- PASS: Dimension keys unique
+- PASS: All quantities and Walmart weeks match original
+- PASS: All prices match original
+- PASS: Dates continuous
+
+Power BI and Excel checks are reported separately in quality_check.md.

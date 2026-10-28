@@ -1,0 +1,20 @@
+[
+  {
+    "file": "calendar.csv",
+    "bytes": 103469,
+    "md5": "3ffeab2991b0c8e861d008b39ea4c95c",
+    "url": "https://zenodo.org/records/10203108/files/calendar.csv?download=1"
+  },
+  {
+    "file": "sales_train_validation.csv",
+    "bytes": 120007726,
+    "md5": "26a366a25beb57b0a8f4c7b148758f94",
+    "url": "https://zenodo.org/records/10203108/files/sales_train_validation.csv?download=1"
+  },
+  {
+    "file": "sell_prices.csv",
+    "bytes": 203395785,
+    "md5": "08c591caa99e55daf3e0ccac913f7c85",
+    "url": "https://zenodo.org/records/10203108/files/sell_prices.csv?download=1"
+  }
+]

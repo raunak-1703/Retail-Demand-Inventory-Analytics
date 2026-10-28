@@ -1,0 +1,644 @@
+{
+  "name": "Retail_Demand_Inventory_Analytics",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "expressions": [
+      {
+        "name": "DataFolder",
+        "kind": "m",
+        "expression": "\"C:/Users/singu/Documents/Coding/Machine Learning/ML Projects/Retail Demand/retail-demand-inventory-analytics/data/processed/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "Sales",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "Store_ID",
+            "dataType": "string",
+            "sourceColumn": "Store_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product_ID",
+            "dataType": "string",
+            "sourceColumn": "Product_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Department",
+            "dataType": "string",
+            "sourceColumn": "Department",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Units_Sold",
+            "dataType": "int64",
+            "sourceColumn": "Units_Sold",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Unit_Price",
+            "dataType": "double",
+            "sourceColumn": "Unit_Price",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sales_Revenue",
+            "dataType": "double",
+            "sourceColumn": "Sales_Revenue",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Week",
+            "dataType": "int64",
+            "sourceColumn": "Week",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day_of_Week",
+            "dataType": "string",
+            "sourceColumn": "Day_of_Week",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sales",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"retail_sales.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Date\", type date}, {\"Store_ID\", type text}, {\"Product_ID\", type text}, {\"Category\", type text}, {\"Department\", type text}, {\"Units_Sold\", Int64.Type}, {\"Unit_Price\", type number}, {\"Sales_Revenue\", type number}, {\"Month\", type text}, {\"Week\", Int64.Type}, {\"Day_of_Week\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Sales Revenue",
+            "expression": "SUM(Sales[Sales_Revenue])",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "Total Units Sold",
+            "expression": "SUM(Sales[Units_Sold])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Average Daily Units Sold",
+            "expression": "DIVIDE([Total Units Sold], COUNTROWS(VALUES(DimDate[Date])))",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Total Products",
+            "expression": "DISTINCTCOUNT(Sales[Product_ID])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Total Stores",
+            "expression": "DISTINCTCOUNT(Sales[Store_ID])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Revenue Contribution %",
+            "expression": "DIVIDE([Total Sales Revenue], CALCULATE([Total Sales Revenue], ALLSELECTED(DimProduct[Product_ID])))",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "A-Class Revenue",
+            "expression": "CALCULATE([Total Sales Revenue], KEEPFILTERS(DimProduct[ABC_Class] = \"A\"))",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "A-Class Product Count",
+            "expression": "CALCULATE([Total Products], KEEPFILTERS(DimProduct[ABC_Class] = \"A\"))",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "B-Class Product Count",
+            "expression": "CALCULATE([Total Products], KEEPFILTERS(DimProduct[ABC_Class] = \"B\"))",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "C-Class Product Count",
+            "expression": "CALCULATE([Total Products], KEEPFILTERS(DimProduct[ABC_Class] = \"C\"))",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Average Safety Stock",
+            "expression": "AVERAGE(Inventory[Safety_Stock])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Average Reorder Point",
+            "expression": "AVERAGE(Inventory[Reorder_Point])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Average Daily Demand",
+            "expression": "AVERAGE(Inventory[Average_Daily_Demand])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Demand Variability",
+            "expression": "AVERAGE(Inventory[Demand_Standard_Deviation])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Fast-Moving Product Count",
+            "expression": "CALCULATE(DISTINCTCOUNT(Inventory[Product_ID]), KEEPFILTERS(DimProduct[Movement_Class] = \"Fast Moving\"))",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Scenario Reorder Point",
+            "expression": "AVERAGE(Sensitivity[Reorder_Point])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Scenario Safety Stock",
+            "expression": "AVERAGE(Sensitivity[Safety_Stock])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Assumed Lead Time",
+            "expression": "MAX(Inventory[Assumed_Lead_Time_Days])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Baseline Product Revenue",
+            "expression": "SUM(DimProduct[Total_Revenue])",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "Baseline Cumulative Revenue %",
+            "expression": "DIVIDE(MAX(DimProduct[Cumulative_Revenue_Percent]),100)",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Top 10 Revenue",
+            "expression": "VAR p = SELECTEDVALUE(DimProduct[Product_ID]) RETURN IF(CONTAINS(TOPN(10, ALLSELECTED(DimProduct[Product_ID]), [Total Sales Revenue], DESC, DimProduct[Product_ID], ASC), DimProduct[Product_ID], p), [Total Sales Revenue])",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "Top 10 Daily Units",
+            "expression": "VAR p = SELECTEDVALUE(DimProduct[Product_ID]) RETURN IF(CONTAINS(TOPN(10, ALLSELECTED(DimProduct[Product_ID]), [Average Daily Units Sold], DESC, DimProduct[Product_ID], ASC), DimProduct[Product_ID], p), [Average Daily Units Sold])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Bottom 10 Daily Units",
+            "expression": "VAR p = SELECTEDVALUE(DimProduct[Product_ID]) RETURN IF(CONTAINS(TOPN(10, ALLSELECTED(DimProduct[Product_ID]), [Average Daily Units Sold], ASC, DimProduct[Product_ID], ASC), DimProduct[Product_ID], p), [Average Daily Units Sold])",
+            "formatString": "#,##0.00"
+          },
+          {
+            "name": "Overview Title",
+            "expression": "\"RETAIL DEMAND & INVENTORY ANALYTICS\"",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Products Title",
+            "expression": "\"ABC & PRODUCT ANALYSIS | fixed full-period classes\"",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Inventory Title",
+            "expression": "\"INVENTORY PLANNING | estimates: 7-day lead time, 95% service\"",
+            "formatString": "#,##0"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Week",
+            "dataType": "int64",
+            "sourceColumn": "Week",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day_of_Week",
+            "dataType": "string",
+            "sourceColumn": "Day_of_Week",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"dim_date.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Date\", type date}, {\"Month\", type text}, {\"Week\", Int64.Type}, {\"Day_of_Week\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimProduct",
+        "columns": [
+          {
+            "name": "Product_ID",
+            "dataType": "string",
+            "sourceColumn": "Product_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Department",
+            "dataType": "string",
+            "sourceColumn": "Department",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Total_Units_Sold",
+            "dataType": "int64",
+            "sourceColumn": "Total_Units_Sold",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Total_Revenue",
+            "dataType": "double",
+            "sourceColumn": "Total_Revenue",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Observed_Days",
+            "dataType": "int64",
+            "sourceColumn": "Observed_Days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Average_Daily_Units_Sold",
+            "dataType": "double",
+            "sourceColumn": "Average_Daily_Units_Sold",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Movement_Class",
+            "dataType": "string",
+            "sourceColumn": "Movement_Class",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ABC_Class",
+            "dataType": "string",
+            "sourceColumn": "ABC_Class",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Revenue_Contribution_Percent",
+            "dataType": "double",
+            "sourceColumn": "Revenue_Contribution_Percent",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cumulative_Revenue_Percent",
+            "dataType": "double",
+            "sourceColumn": "Cumulative_Revenue_Percent",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProduct",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"dim_product.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Product_ID\", type text}, {\"Category\", type text}, {\"Department\", type text}, {\"Total_Units_Sold\", Int64.Type}, {\"Total_Revenue\", type number}, {\"Observed_Days\", Int64.Type}, {\"Average_Daily_Units_Sold\", type number}, {\"Movement_Class\", type text}, {\"ABC_Class\", type text}, {\"Revenue_Contribution_Percent\", type number}, {\"Cumulative_Revenue_Percent\", type number}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimStore",
+        "columns": [
+          {
+            "name": "Store_ID",
+            "dataType": "string",
+            "sourceColumn": "Store_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimStore",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"dim_store.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Store_ID\", type text}, {\"State\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Inventory",
+        "columns": [
+          {
+            "name": "Store_ID",
+            "dataType": "string",
+            "sourceColumn": "Store_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product_ID",
+            "dataType": "string",
+            "sourceColumn": "Product_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Average_Daily_Demand",
+            "dataType": "double",
+            "sourceColumn": "Average_Daily_Demand",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Demand_Standard_Deviation",
+            "dataType": "double",
+            "sourceColumn": "Demand_Standard_Deviation",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assumed_Lead_Time_Days",
+            "dataType": "int64",
+            "sourceColumn": "Assumed_Lead_Time_Days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Target_Service_Level",
+            "dataType": "double",
+            "sourceColumn": "Target_Service_Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Safety_Stock",
+            "dataType": "int64",
+            "sourceColumn": "Safety_Stock",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Reorder_Point",
+            "dataType": "int64",
+            "sourceColumn": "Reorder_Point",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Movement_Class",
+            "dataType": "string",
+            "sourceColumn": "Movement_Class",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ABC_Class",
+            "dataType": "string",
+            "sourceColumn": "ABC_Class",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Inventory",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"inventory_planning.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Store_ID\", type text}, {\"Product_ID\", type text}, {\"Average_Daily_Demand\", type number}, {\"Demand_Standard_Deviation\", type number}, {\"Assumed_Lead_Time_Days\", Int64.Type}, {\"Target_Service_Level\", type number}, {\"Safety_Stock\", Int64.Type}, {\"Reorder_Point\", Int64.Type}, {\"Movement_Class\", type text}, {\"ABC_Class\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sensitivity",
+        "columns": [
+          {
+            "name": "Store_ID",
+            "dataType": "string",
+            "sourceColumn": "Store_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product_ID",
+            "dataType": "string",
+            "sourceColumn": "Product_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Average_Daily_Demand",
+            "dataType": "double",
+            "sourceColumn": "Average_Daily_Demand",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Demand_Standard_Deviation",
+            "dataType": "double",
+            "sourceColumn": "Demand_Standard_Deviation",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Assumed_Lead_Time_Days",
+            "dataType": "int64",
+            "sourceColumn": "Assumed_Lead_Time_Days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Target_Service_Level",
+            "dataType": "double",
+            "sourceColumn": "Target_Service_Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Safety_Stock",
+            "dataType": "int64",
+            "sourceColumn": "Safety_Stock",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Reorder_Point",
+            "dataType": "int64",
+            "sourceColumn": "Reorder_Point",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Movement_Class",
+            "dataType": "string",
+            "sourceColumn": "Movement_Class",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ABC_Class",
+            "dataType": "string",
+            "sourceColumn": "ABC_Class",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sensitivity",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"lead_time_sensitivity.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Store_ID\", type text}, {\"Product_ID\", type text}, {\"Average_Daily_Demand\", type number}, {\"Demand_Standard_Deviation\", type number}, {\"Assumed_Lead_Time_Days\", Int64.Type}, {\"Target_Service_Level\", type number}, {\"Safety_Stock\", Int64.Type}, {\"Reorder_Point\", Int64.Type}, {\"Movement_Class\", type text}, {\"ABC_Class\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "d06b87dc-5b60-514b-bf72-2a3eff3e5a4d",
+        "fromTable": "Sales",
+        "fromColumn": "Product_ID",
+        "toTable": "DimProduct",
+        "toColumn": "Product_ID",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "a79bb61b-f068-5ef1-a3c7-ee1a00bc3121",
+        "fromTable": "Sales",
+        "fromColumn": "Store_ID",
+        "toTable": "DimStore",
+        "toColumn": "Store_ID",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "aa991a1a-8646-5af6-8dea-ea14c7f3780d",
+        "fromTable": "Sales",
+        "fromColumn": "Date",
+        "toTable": "DimDate",
+        "toColumn": "Date",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "f40debfd-b4c1-5b25-8cbd-c57e5bac9029",
+        "fromTable": "Inventory",
+        "fromColumn": "Product_ID",
+        "toTable": "DimProduct",
+        "toColumn": "Product_ID",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "bf027697-8e2e-561c-b3d5-c42997757043",
+        "fromTable": "Inventory",
+        "fromColumn": "Store_ID",
+        "toTable": "DimStore",
+        "toColumn": "Store_ID",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "a965dc07-6607-5e3f-a7e9-fa9f7863779c",
+        "fromTable": "Sensitivity",
+        "fromColumn": "Product_ID",
+        "toTable": "DimProduct",
+        "toColumn": "Product_ID",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "2a428d2c-51b3-5e1c-bad9-3199be1d5d08",
+        "fromTable": "Sensitivity",
+        "fromColumn": "Store_ID",
+        "toTable": "DimStore",
+        "toColumn": "Store_ID",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ]
+  }
+}

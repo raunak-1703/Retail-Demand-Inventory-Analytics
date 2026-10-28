@@ -1,0 +1,614 @@
+﻿{
+    "summary":  {
+                    "[Revenue]":  108821.09000000003,
+                    "[Units]":  36956,
+                    "[Products]":  50,
+                    "[Stores]":  2,
+                    "[DailyUnits]":  101.24931506849315,
+                    "[ARevenue]":  88515.190000000046,
+                    "[ACount]":  26,
+                    "[BCount]":  14,
+                    "[CCount]":  10,
+                    "[Safety]":  6.06,
+                    "[ROP]":  13.15,
+                    "[Demand]":  1.0124931506840003,
+                    "[Fast]":  13
+                },
+    "classes":  [
+                    {
+                        "DimProduct[ABC_Class]":  "A",
+                        "[Revenue]":  88515.1899999983,
+                        "[Products]":  26
+                    },
+                    {
+                        "DimProduct[ABC_Class]":  "C",
+                        "[Revenue]":  4805.4100000000171,
+                        "[Products]":  10
+                    },
+                    {
+                        "DimProduct[ABC_Class]":  "B",
+                        "[Revenue]":  15500.489999999983,
+                        "[Products]":  14
+                    }
+                ],
+    "products":  [
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_1_150",
+                         "[Revenue]":  6805.9199999999964,
+                         "[Share]":  0.062542288447946945,
+                         "[TopRevenue]":  6805.9199999999964,
+                         "[Fast]":  3.5315068493150683,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_1_167",
+                         "[Revenue]":  2395.9799999999991,
+                         "[Share]":  0.022017607064954033,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_1_184",
+                         "[Revenue]":  2532,
+                         "[Share]":  0.023267548597427204,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  6.9369863013698634,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_2_123",
+                         "[Revenue]":  1553.3100000000024,
+                         "[Share]":  0.014273979428068604,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_2_127",
+                         "[Revenue]":  1882.4400000000026,
+                         "[Share]":  0.017298485063878721,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_033",
+                         "[Revenue]":  595,
+                         "[Share]":  0.00546769013249178,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_070",
+                         "[Revenue]":  468.24999999999955,
+                         "[Share]":  0.0043029342933433162,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  6.1315068493150688,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_129",
+                         "[Revenue]":  2369.0000000000018,
+                         "[Share]":  0.021769677182979893,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_161",
+                         "[Revenue]":  532.61999999999944,
+                         "[Share]":  0.0048944556611223,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_163",
+                         "[Revenue]":  4095.2800000000016,
+                         "[Share]":  0.037633146295446965,
+                         "[TopRevenue]":  4095.2800000000016,
+                         "[Fast]":  5.3150684931506849,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_267",
+                         "[Revenue]":  2473.799999999997,
+                         "[Share]":  0.022732725797912853,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_289",
+                         "[Revenue]":  2779.3000000000065,
+                         "[Share]":  0.0255400860256041,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_413",
+                         "[Revenue]":  2277,
+                         "[Share]":  0.020924252826359298,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  6.2383561643835614,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_416",
+                         "[Revenue]":  1503.4799999999998,
+                         "[Share]":  0.013816071866216369,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_459",
+                         "[Revenue]":  2049.2000000000003,
+                         "[Share]":  0.018830908604205304,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_627",
+                         "[Revenue]":  1549.4400000000037,
+                         "[Share]":  0.014238416468719468,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_705",
+                         "[Revenue]":  2727.6400000000053,
+                         "[Share]":  0.025065361870571273,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_769",
+                         "[Revenue]":  3122.7499999999964,
+                         "[Share]":  0.028696183800401152,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  6.3671232876712329,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_784",
+                         "[Revenue]":  908.719999999999,
+                         "[Share]":  0.00835058718856794,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "FOODS_3_812",
+                         "[Revenue]":  4203.2400000000061,
+                         "[Share]":  0.038625233399150895,
+                         "[TopRevenue]":  4203.2400000000061,
+                         "[Fast]":  3.9863013698630136,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_095",
+                         "[Revenue]":  622.0800000000005,
+                         "[Share]":  0.0057165389539840152,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.22191780821917809
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_124",
+                         "[Revenue]":  4574.7000000000025,
+                         "[Share]":  0.042038726132958247,
+                         "[TopRevenue]":  4574.7000000000025,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_157",
+                         "[Revenue]":  5459.5200000000013,
+                         "[Share]":  0.050169686776708453,
+                         "[TopRevenue]":  5459.5200000000013,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_171",
+                         "[Revenue]":  869.75999999999942,
+                         "[Share]":  0.00799256835232949,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_185",
+                         "[Revenue]":  1062.7200000000016,
+                         "[Share]":  0.0097657540463893661,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_245",
+                         "[Revenue]":  820.05000000000075,
+                         "[Share]":  0.0075357635178989711,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.45205479452054792
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_293",
+                         "[Revenue]":  839.04000000000019,
+                         "[Share]":  0.00771027013237967,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_421",
+                         "[Revenue]":  6149.5199999999941,
+                         "[Share]":  0.056510369451362716,
+                         "[TopRevenue]":  6149.5199999999941,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_1_422",
+                         "[Revenue]":  553.86000000000035,
+                         "[Share]":  0.0050896384147594937,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.41917808219178082
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_2_069",
+                         "[Revenue]":  588.06000000000006,
+                         "[Share]":  0.0054039157299380107,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOBBIES_2_071",
+                         "[Revenue]":  195.93999999999988,
+                         "[Share]":  0.0018005700916982161,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_017",
+                         "[Revenue]":  3067.7400000000034,
+                         "[Share]":  0.028190675171513194,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_048",
+                         "[Revenue]":  4660.4399999999941,
+                         "[Share]":  0.042826624875747829,
+                         "[TopRevenue]":  4660.4399999999941,
+                         "[Fast]":  4.4958904109589044,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_065",
+                         "[Revenue]":  673.26,
+                         "[Share]":  0.00618685219933011,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_089",
+                         "[Revenue]":  699.48000000000036,
+                         "[Share]":  0.0064277981409669779,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.36712328767123287
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_129",
+                         "[Revenue]":  4568.320000000007,
+                         "[Share]":  0.041980097791705688,
+                         "[TopRevenue]":  4568.320000000007,
+                         "[Fast]":  3.1616438356164385,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_163",
+                         "[Revenue]":  1716.5600000000011,
+                         "[Share]":  0.015774148191311083,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.47123287671232877
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_166",
+                         "[Revenue]":  3102.3200000000061,
+                         "[Share]":  0.028508444456860387,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_208",
+                         "[Revenue]":  1690.7400000000009,
+                         "[Share]":  0.015536878007746481,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  4.9808219178082194,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_390",
+                         "[Revenue]":  1524.6800000000048,
+                         "[Share]":  0.014010887044046374,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_470",
+                         "[Revenue]":  488.71999999999952,
+                         "[Share]":  0.0044910412126913943,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.44931506849315067
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_472",
+                         "[Revenue]":  920.61999999999978,
+                         "[Share]":  0.0084599409912177823,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.52328767123287667
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_1_532",
+                         "[Revenue]":  2415.5200000000045,
+                         "[Share]":  0.022197167846784147,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_2_126",
+                         "[Revenue]":  1449.7600000000029,
+                         "[Share]":  0.013322417557111426,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_2_259",
+                         "[Revenue]":  3243.7899999999977,
+                         "[Share]":  0.029808468193068063,
+                         "[TopRevenue]":  3243.7899999999977,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_2_300",
+                         "[Revenue]":  1307.0800000000011,
+                         "[Share]":  0.012011274652735061,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.44931506849315067
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_2_415",
+                         "[Revenue]":  297.55999999999995,
+                         "[Share]":  0.0027343964299567287,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.32876712328767121
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_2_429",
+                         "[Revenue]":  463.31999999999988,
+                         "[Share]":  0.004257630575102673,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  0.21369863013698631
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_2_437",
+                         "[Revenue]":  6599.1599999999944,
+                         "[Share]":  0.060642289100393987,
+                         "[TopRevenue]":  6599.1599999999944,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     },
+                     {
+                         "DimProduct[Product_ID]":  "HOUSEHOLD_2_439",
+                         "[Revenue]":  1372.399999999999,
+                         "[Share]":  0.012611525945935651,
+                         "[TopRevenue]":  null,
+                         "[Fast]":  null,
+                         "[Slow]":  null
+                     }
+                 ],
+    "stores":  [
+                   {
+                       "DimStore[Store_ID]":  "CA_1",
+                       "[Revenue]":  55900.469999999514,
+                       "[Units]":  18949
+                   },
+                   {
+                       "DimStore[Store_ID]":  "CA_2",
+                       "[Revenue]":  52920.619999999915,
+                       "[Units]":  18007
+                   }
+               ],
+    "months":  [
+                   {
+                       "DimDate[Month]":  "2015-04",
+                       "[Revenue]":  1154.2500000000002,
+                       "[Units]":  407
+                   },
+                   {
+                       "DimDate[Month]":  "2015-05",
+                       "[Revenue]":  7895.0099999999984,
+                       "[Units]":  2975
+                   },
+                   {
+                       "DimDate[Month]":  "2015-06",
+                       "[Revenue]":  7723.4399999999887,
+                       "[Units]":  2947
+                   },
+                   {
+                       "DimDate[Month]":  "2015-07",
+                       "[Revenue]":  8885.3999999999978,
+                       "[Units]":  3287
+                   },
+                   {
+                       "DimDate[Month]":  "2015-08",
+                       "[Revenue]":  9042.5399999999936,
+                       "[Units]":  3381
+                   },
+                   {
+                       "DimDate[Month]":  "2015-09",
+                       "[Revenue]":  8964.0599999999977,
+                       "[Units]":  3138
+                   },
+                   {
+                       "DimDate[Month]":  "2015-10",
+                       "[Revenue]":  9346.99999999999,
+                       "[Units]":  3075
+                   },
+                   {
+                       "DimDate[Month]":  "2015-11",
+                       "[Revenue]":  9043.3899999999867,
+                       "[Units]":  2713
+                   },
+                   {
+                       "DimDate[Month]":  "2015-12",
+                       "[Revenue]":  9487.86999999999,
+                       "[Units]":  2778
+                   },
+                   {
+                       "DimDate[Month]":  "2016-01",
+                       "[Revenue]":  9394.3300000000127,
+                       "[Units]":  3041
+                   },
+                   {
+                       "DimDate[Month]":  "2016-02",
+                       "[Revenue]":  9222.3999999999924,
+                       "[Units]":  3055
+                   },
+                   {
+                       "DimDate[Month]":  "2016-03",
+                       "[Revenue]":  9924.5000000000036,
+                       "[Units]":  3228
+                   },
+                   {
+                       "DimDate[Month]":  "2016-04",
+                       "[Revenue]":  8736.9000000000051,
+                       "[Units]":  2931
+                   }
+               ],
+    "scenario":  [
+                     {
+                         "Sensitivity[Assumed_Lead_Time_Days]":  5,
+                         "[ROP]":  10.3,
+                         "[Safety]":  5.19
+                     },
+                     {
+                         "Sensitivity[Assumed_Lead_Time_Days]":  7,
+                         "[ROP]":  13.15,
+                         "[Safety]":  6.06
+                     },
+                     {
+                         "Sensitivity[Assumed_Lead_Time_Days]":  10,
+                         "[ROP]":  17.31,
+                         "[Safety]":  7.12
+                     }
+                 ],
+    "relationships":  [
+                          {
+                              "Name":  "d06b87dc-5b60-514b-bf72-2a3eff3e5a4d",
+                              "FromTableID":  10,
+                              "FromColumnID":  38,
+                              "ToTableID":  16,
+                              "ToColumnID":  51,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          },
+                          {
+                              "Name":  "a79bb61b-f068-5ef1-a3c7-ee1a00bc3121",
+                              "FromTableID":  10,
+                              "FromColumnID":  37,
+                              "ToTableID":  19,
+                              "ToColumnID":  62,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          },
+                          {
+                              "Name":  "aa991a1a-8646-5af6-8dea-ea14c7f3780d",
+                              "FromTableID":  10,
+                              "FromColumnID":  36,
+                              "ToTableID":  13,
+                              "ToColumnID":  47,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          },
+                          {
+                              "Name":  "f40debfd-b4c1-5b25-8cbd-c57e5bac9029",
+                              "FromTableID":  22,
+                              "FromColumnID":  65,
+                              "ToTableID":  16,
+                              "ToColumnID":  51,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          },
+                          {
+                              "Name":  "bf027697-8e2e-561c-b3d5-c42997757043",
+                              "FromTableID":  22,
+                              "FromColumnID":  64,
+                              "ToTableID":  19,
+                              "ToColumnID":  62,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          },
+                          {
+                              "Name":  "a965dc07-6607-5e3f-a7e9-fa9f7863779c",
+                              "FromTableID":  25,
+                              "FromColumnID":  75,
+                              "ToTableID":  16,
+                              "ToColumnID":  51,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          },
+                          {
+                              "Name":  "2a428d2c-51b3-5e1c-bad9-3199be1d5d08",
+                              "FromTableID":  25,
+                              "FromColumnID":  74,
+                              "ToTableID":  19,
+                              "ToColumnID":  62,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          },
+                          {
+                              "Name":  "9c57d9eb-a3f6-4408-aa16-a0c5c75f15bf",
+                              "FromTableID":  13,
+                              "FromColumnID":  47,
+                              "ToTableID":  691,
+                              "ToColumnID":  702,
+                              "IsActive":  true,
+                              "CrossFilteringBehavior":  1
+                          }
+                      ],
+    "counts":  {
+                   "[Sales]":  36500,
+                   "[Date]":  365,
+                   "[Product]":  50,
+                   "[Store]":  2,
+                   "[Inventory]":  100,
+                   "[Sensitivity]":  300
+               }
+}

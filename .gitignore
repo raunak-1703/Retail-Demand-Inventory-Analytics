@@ -1,0 +1,26 @@
+# Data remains local; source terms do not grant a clear blanket redistribution license.
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+excel/*.xlsx
+powerbi/*.pbix
+**/.pbi/
+**/localSettings.json
+**/cache.abf
+*.lock
+.tmp/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+kaggle.json
+access_token
+*.key
+*.log
+~$*
+.DS_Store
+Thumbs.db

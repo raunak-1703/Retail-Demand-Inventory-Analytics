@@ -1,0 +1,715 @@
+[
+  {
+    "page": "executive",
+    "type": "card",
+    "title": "Walmart M5 | 26 Apr 2015 - 24 Apr 2016 | 50 products / 2 stores",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Overview Title",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "slicer",
+    "title": "Date",
+    "roles": {
+      "Values": [
+        [
+          "DimDate",
+          "Date",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "slicer",
+    "title": "Store",
+    "roles": {
+      "Values": [
+        [
+          "DimStore",
+          "Store_ID",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "slicer",
+    "title": "Category",
+    "roles": {
+      "Values": [
+        [
+          "DimProduct",
+          "Category",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "card",
+    "title": "Total Sales Revenue",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Total Sales Revenue",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "card",
+    "title": "Total Units Sold",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Total Units Sold",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "card",
+    "title": "Total Products",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Total Products",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "card",
+    "title": "Total Stores",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Total Stores",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "card",
+    "title": "Average Daily Units Sold",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Average Daily Units Sold",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "lineChart",
+    "title": "Monthly sales revenue (partial first/last month)",
+    "roles": {
+      "Category": [
+        [
+          "DimDate",
+          "Month",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Total Sales Revenue",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "clusteredBarChart",
+    "title": "Sales revenue by store",
+    "roles": {
+      "Category": [
+        [
+          "DimStore",
+          "Store_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Total Sales Revenue",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "donutChart",
+    "title": "Sales revenue by category",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Category",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Total Sales Revenue",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "clusteredBarChart",
+    "title": "Top 10 products by revenue",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Top 10 Revenue",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "executive",
+    "type": "lineChart",
+    "title": "Daily units sold",
+    "roles": {
+      "Category": [
+        [
+          "DimDate",
+          "Date",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Total Units Sold",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "card",
+    "title": "Walmart M5 | 26 Apr 2015 - 24 Apr 2016 | 50 products / 2 stores",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Products Title",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "slicer",
+    "title": "Store",
+    "roles": {
+      "Values": [
+        [
+          "DimStore",
+          "Store_ID",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "slicer",
+    "title": "Category",
+    "roles": {
+      "Values": [
+        [
+          "DimProduct",
+          "Category",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "slicer",
+    "title": "ABC Class",
+    "roles": {
+      "Values": [
+        [
+          "DimProduct",
+          "ABC_Class",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "card",
+    "title": "A-Class Product Count",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "A-Class Product Count",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "card",
+    "title": "B-Class Product Count",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "B-Class Product Count",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "card",
+    "title": "C-Class Product Count",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "C-Class Product Count",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "card",
+    "title": "A-Class Revenue",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "A-Class Revenue",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "donutChart",
+    "title": "ABC product distribution (fixed baseline classes)",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "ABC_Class",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Total Products",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "lineClusteredColumnComboChart",
+    "title": "Pareto | full-period, both-store baseline",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Baseline Product Revenue",
+          true
+        ]
+      ],
+      "Y2": [
+        [
+          "Sales",
+          "Baseline Cumulative Revenue %",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "clusteredBarChart",
+    "title": "Top 10 products by daily units",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Top 10 Daily Units",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "clusteredBarChart",
+    "title": "Bottom 10 products by daily units",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Bottom 10 Daily Units",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "products",
+    "type": "tableEx",
+    "title": "Product performance",
+    "roles": {
+      "Values": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ],
+        [
+          "Sales",
+          "Total Sales Revenue",
+          true
+        ],
+        [
+          "Sales",
+          "Total Units Sold",
+          true
+        ],
+        [
+          "DimProduct",
+          "ABC_Class",
+          false
+        ],
+        [
+          "DimProduct",
+          "Movement_Class",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "card",
+    "title": "Walmart M5 | 26 Apr 2015 - 24 Apr 2016 | 50 products / 2 stores",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Inventory Title",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "slicer",
+    "title": "Store",
+    "roles": {
+      "Values": [
+        [
+          "DimStore",
+          "Store_ID",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "slicer",
+    "title": "Category",
+    "roles": {
+      "Values": [
+        [
+          "DimProduct",
+          "Category",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "slicer",
+    "title": "Product",
+    "roles": {
+      "Values": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "card",
+    "title": "Average Daily Demand",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Average Daily Demand",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "card",
+    "title": "Average Safety Stock",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Average Safety Stock",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "card",
+    "title": "Average Reorder Point",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Average Reorder Point",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "card",
+    "title": "Fast-Moving Product Count",
+    "roles": {
+      "Values": [
+        [
+          "Sales",
+          "Fast-Moving Product Count",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "clusteredBarChart",
+    "title": "Mean reorder threshold by product",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Average Reorder Point",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "clusteredBarChart",
+    "title": "Mean safety stock by product",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Average Safety Stock",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "clusteredBarChart",
+    "title": "Mean daily demand standard deviation",
+    "roles": {
+      "Category": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Demand Variability",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "lineChart",
+    "title": "Mean reorder threshold | assumed lead time 5 / 7 / 10 days",
+    "roles": {
+      "Category": [
+        [
+          "Sensitivity",
+          "Assumed_Lead_Time_Days",
+          false
+        ]
+      ],
+      "Y": [
+        [
+          "Sales",
+          "Scenario Reorder Point",
+          true
+        ]
+      ]
+    }
+  },
+  {
+    "page": "inventory",
+    "type": "tableEx",
+    "title": "Planning estimates | no current inventory / no reorder alerts",
+    "roles": {
+      "Values": [
+        [
+          "DimProduct",
+          "Product_ID",
+          false
+        ],
+        [
+          "DimStore",
+          "Store_ID",
+          false
+        ],
+        [
+          "Sales",
+          "Average Daily Demand",
+          true
+        ],
+        [
+          "Sales",
+          "Assumed Lead Time",
+          true
+        ],
+        [
+          "Sales",
+          "Average Safety Stock",
+          true
+        ],
+        [
+          "Sales",
+          "Average Reorder Point",
+          true
+        ],
+        [
+          "DimProduct",
+          "ABC_Class",
+          false
+        ],
+        [
+          "DimProduct",
+          "Movement_Class",
+          false
+        ]
+      ]
+    }
+  }
+]

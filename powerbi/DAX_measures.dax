@@ -1,0 +1,77 @@
+Total Sales Revenue =
+SUM(Sales[Sales_Revenue])
+
+Total Units Sold =
+SUM(Sales[Units_Sold])
+
+Average Daily Units Sold =
+DIVIDE([Total Units Sold], COUNTROWS(VALUES(DimDate[Date])))
+
+Total Products =
+DISTINCTCOUNT(Sales[Product_ID])
+
+Total Stores =
+DISTINCTCOUNT(Sales[Store_ID])
+
+Revenue Contribution % =
+DIVIDE([Total Sales Revenue], CALCULATE([Total Sales Revenue], ALLSELECTED(DimProduct[Product_ID])))
+
+A-Class Revenue =
+CALCULATE([Total Sales Revenue], KEEPFILTERS(DimProduct[ABC_Class] = "A"))
+
+A-Class Product Count =
+CALCULATE([Total Products], KEEPFILTERS(DimProduct[ABC_Class] = "A"))
+
+B-Class Product Count =
+CALCULATE([Total Products], KEEPFILTERS(DimProduct[ABC_Class] = "B"))
+
+C-Class Product Count =
+CALCULATE([Total Products], KEEPFILTERS(DimProduct[ABC_Class] = "C"))
+
+Average Safety Stock =
+AVERAGE(Inventory[Safety_Stock])
+
+Average Reorder Point =
+AVERAGE(Inventory[Reorder_Point])
+
+Average Daily Demand =
+AVERAGE(Inventory[Average_Daily_Demand])
+
+Demand Variability =
+AVERAGE(Inventory[Demand_Standard_Deviation])
+
+Fast-Moving Product Count =
+CALCULATE(DISTINCTCOUNT(Inventory[Product_ID]), KEEPFILTERS(DimProduct[Movement_Class] = "Fast Moving"))
+
+Scenario Reorder Point =
+AVERAGE(Sensitivity[Reorder_Point])
+
+Scenario Safety Stock =
+AVERAGE(Sensitivity[Safety_Stock])
+
+Assumed Lead Time =
+MAX(Inventory[Assumed_Lead_Time_Days])
+
+Baseline Product Revenue =
+SUM(DimProduct[Total_Revenue])
+
+Baseline Cumulative Revenue % =
+DIVIDE(MAX(DimProduct[Cumulative_Revenue_Percent]),100)
+
+Top 10 Revenue =
+VAR p = SELECTEDVALUE(DimProduct[Product_ID]) RETURN IF(CONTAINS(TOPN(10, ALLSELECTED(DimProduct[Product_ID]), [Total Sales Revenue], DESC, DimProduct[Product_ID], ASC), DimProduct[Product_ID], p), [Total Sales Revenue])
+
+Top 10 Daily Units =
+VAR p = SELECTEDVALUE(DimProduct[Product_ID]) RETURN IF(CONTAINS(TOPN(10, ALLSELECTED(DimProduct[Product_ID]), [Average Daily Units Sold], DESC, DimProduct[Product_ID], ASC), DimProduct[Product_ID], p), [Average Daily Units Sold])
+
+Bottom 10 Daily Units =
+VAR p = SELECTEDVALUE(DimProduct[Product_ID]) RETURN IF(CONTAINS(TOPN(10, ALLSELECTED(DimProduct[Product_ID]), [Average Daily Units Sold], ASC, DimProduct[Product_ID], ASC), DimProduct[Product_ID], p), [Average Daily Units Sold])
+
+Overview Title =
+"RETAIL DEMAND & INVENTORY ANALYTICS"
+
+Products Title =
+"ABC & PRODUCT ANALYSIS | fixed full-period classes"
+
+Inventory Title =
+"INVENTORY PLANNING | estimates: 7-day lead time, 95% service"
